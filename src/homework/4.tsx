@@ -5,9 +5,12 @@ type MenuIds = "first" | "second" | "last";
 type Menu = { id: MenuIds; title: string };
 
 // Додати тип Menu Selected
+type SelectedMenu = {
+id: MenuIds
+}
 
 type MenuSelected = {
-  selectedMenu: {id:MenuIds}
+  selectedMenu: SelectedMenu
 }
 
 const MenuSelectedContext = createContext<MenuSelected>({
@@ -28,9 +31,7 @@ type PropsProvider = {
   children : React.ReactNode; // Додати тип для children
 };
 
-type SelectedMenu = {
-id: MenuIds
-}
+
 
 function MenuProvider({ children }: PropsProvider) {
   // Додати тип для SelectedMenu він повинен містити { id }
